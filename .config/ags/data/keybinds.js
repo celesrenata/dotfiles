@@ -142,6 +142,7 @@ export const keybindList = [[
 	    { "keys": ["󰪿", ">three fingers"], "action": "Change desktop" },
 	    { "keys": ["󰝁", ">three fingers"], "action": "Move window" },
 	    { "keys": ["󰜽", ">four fingers"], "action": "Open Spotlight" },
+	    { "keys": ["󰝀", ">four fingers"], "action": "Open App Wheel" },
 	    { "keys": ["󰜿", ">four fingers"], "action": "Open Left Sidebar" },
 	    { "keys": ["󰜾", ">four fingers"], "action": "Open Right Sidebar" },
 	    { "keys": ["󰪽", ">four fingers"], "action": "Fullscreen/Minimize" },
