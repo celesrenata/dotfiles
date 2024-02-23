@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo pacman -S wget --needed --noconfirm
 if ! [ -f "/opt/gcc13/bin/gcc" ]; then
 	GCCVER=$(gcc --version | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" | awk -F '.' '{ print $1 }' )
 	if [ "${GCCVER}" -lt 13 ]; then
