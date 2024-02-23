@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" -eq "--toshy" ]; then
+if [ "$1" == "--toshy" ]; then
 	cd ~/sources
 	git clone https://github.com/RedBearAK/toshy.git
 
@@ -9,22 +9,23 @@ if [ "$1" -eq "--toshy" ]; then
 	exit
 fi
 
+GCCVER=$(gcc --version | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" | awk -F '.' '{ print $1 }' )
 sudo pacman -S wget --needed --noconfirm
 if ! [ -f "/opt/gcc13/bin/gcc" ]; then
-	GCCVER=$(gcc --version | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" | awk -F '.' '{ print $1 }' )
-	if [ "${GCCVER}" -lt 13 ]; then
+	if [ $GCCVER -lt 13 ]; then
 		./build-gcc13.sh
 	fi
 fi
-yay -S hyprlang --needed --noconfirm
 mkdir -p ~/sources/{end-4,celes}
 cd ~/sources/end-4
 git clone https://github.com/end-4/dots-hyprland.git
 cd dots-hyprland
-
-if [ "${GCCVER}" -lt 13 ]; then
+if [ $GCCVER -lt 13 ]; then
+        CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ yay -S hyprlang --needed --noconfirm
 	CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ ./install.sh
 else
+	echo "gcc13 already installed"
+	yay -S hyprlang --needed --noconfirm
 	./install.sh
 fi
 cd ~/
