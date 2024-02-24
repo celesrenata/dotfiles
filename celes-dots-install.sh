@@ -7,6 +7,8 @@ if [ "$1" == "--toshy" ]; then
 
 	cd toshy
 	./setup_toshy.py install --override-distro arch
+	echo ""
+	echo "Do not forget to click the rainbow '󰘳' and select the Apple keyboard! until you add yours properly."
 	exit
 fi
 
