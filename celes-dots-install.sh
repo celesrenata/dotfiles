@@ -1,5 +1,6 @@
 #!/bin/bash
 
+OPWD=$(pwd)
 if [ "$1" == "--toshy" ]; then
 	cd ~/sources
 	git clone https://github.com/RedBearAK/toshy.git
@@ -31,7 +32,7 @@ fi
 cd ~/
 yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync cairo-dock-plug-ins-wayland-git network-manager-applet
 rm -rf ~/.config/cairo-dock/current_theme/plug-ins/switcher/
-rsync -aHx .config ~/
+rsync -aHx ${OPWD}/.config ~/
 sudo systemctl enable touchegg
 sudo systemctl start touchegg
 
