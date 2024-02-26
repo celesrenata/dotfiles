@@ -2,7 +2,7 @@ const { Gdk, Gtk } = imports.gi;
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Service from 'resource:///com/github/Aylur/ags/service.js';
 import { Keybinds } from "./keybinds.js";
-import { setupCursorHover } from "../../lib/cursorhover.js";
+import { setupCursorHover } from "../.widgetutils/cursorhover.js";
 
 const cheatsheetHeader = () => Widget.CenterBox({
     vertical: false,
@@ -24,7 +24,7 @@ const cheatsheetHeader = () => Widget.CenterBox({
                     Widget.Label({
                         vpack: 'center',
                         className: "cheatsheet-key txt-small",
-                        label: "󰘳 ⌥",
+                        label: "",
                     }),
                     Widget.Label({
                         vpack: 'center',
@@ -43,7 +43,7 @@ const cheatsheetHeader = () => Widget.CenterBox({
                 selectable: true,
                 justify: Gtk.Justification.CENTER,
                 className: 'txt-small txt',
-                label: 'Sheet data stored in <tt>~/.config/ags/data/keybinds.js</tt>\nChange keybinds in <tt>~/.config/hypr/keybinds.conf</tt>'
+                label: 'Sheet data stored in <tt>~/.config/ags/modules/cheatsheet/data_keybinds.js</tt>\nChange keybinds in <tt>~/.config/hypr/hyprland/keybinds.conf</tt>'
             }),
         ]
     }),
@@ -67,7 +67,6 @@ const clickOutsideToClose = Widget.EventBox({
     onSecondaryClick: () => App.closeWindow('cheatsheet'),
     onMiddleClick: () => App.closeWindow('cheatsheet'),
 });
-
 export default () => Widget.Window({
     name: 'cheatsheet',
     exclusivity: 'ignore',
@@ -86,5 +85,7 @@ export default () => Widget.Window({
                     Keybinds(),
                 ]
             }),
+    
     })
 });
+
