@@ -32,7 +32,7 @@ else
 	./install.sh
 fi
 cd ~/
-yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync cairo-dock-plug-ins-wayland-git network-manager-applet
+yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync cairo-dock-plug-ins-wayland-git network-manager-applet touche
 rm -rf ~/.config/cairo-dock/current_theme/plug-ins/switcher/
 rsync -aHx ${OPWD}/.config ~/
 sudo systemctl enable touchegg
