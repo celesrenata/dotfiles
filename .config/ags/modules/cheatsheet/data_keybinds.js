@@ -78,8 +78,8 @@ export const keybindList = [[
             { "keys": ["󰘳", "Alt", "+", "5"], "action": "Record region with sound" },
             { "keys": ["󰘳", "Shift", "Alt", "+", "5"], "action": "Record screen with sound" },
             { "keys": ["󰘳", "Ctrl", "+", "3"], "action": "Calculator" },
-            { "keys": ["󰘳", "Ctrl", "+", "N"], "action": "Flux Capacitor Increase" },
-            { "keys": ["󰘳", "Ctrl", "Alt", "+", "N"], "action": "Flux Capacitor Decrease" },
+            { "keys": ["󰘳", "Ctrl", "+", "N"], "action": "Daylight Filter Increase" },
+            { "keys": ["󰘳", "Ctrl", "Alt", "+", "N"], "action": "Daylight Filter Decrease" },
 	    { "keys": ["󰘳", "+", "L"], "action": "Lock desktop" },
         ],
         "appeartick": 2
@@ -90,6 +90,9 @@ export const keybindList = [[
         "binds": [
             { "keys": ["󰘳", "+", "V"], "action": "Clipboard history  >>  clipboard" },
 	    { "keys": ["󰘳", "+", "󰘵", "+", "V"], "action": "Flycut  >> clipboard" },
+	    { "keys": ["Ctrl", "+", "󰍜"], "action": "Snippets Menu" }, 
+	    { "keys": ["󰘵", "+", "󰍜"], "action": "Add to Snippets Menu" }, 
+//	    { "keys": ["Ctrl", "󰘵", "+", "󰍜"], "action": "Delete from Snippets Menu" }, 
             { "keys": ["󰘳", "+", "."], "action": "Emoji picker  >>  clipboard" },
         ],
         "appeartick": 3
