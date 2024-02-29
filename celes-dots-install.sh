@@ -43,6 +43,7 @@ grep "LD_LIBRARY_PATH=/opt/gcc13/lib64" /etc/environment -q
 if [ $? -ne 0 ]; then
 	echo "LD_LIBRARY_PATH=/opt/gcc13/lib64" | sudo tee -a /etc/environment
 fi
+patch ~/.config/hypr/hyprland.conf ${OPWD}/hyprland.conf.patch
 echo ""
 echo "you will want to reboot now and rerun this command with the --toshy switch from within Hyprland."
 echo "The embedded cheatsheat is accessible via Super + Alt/Option + /"
