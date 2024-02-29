@@ -23,6 +23,7 @@ mkdir -p ~/sources/{end-4,celes}
 cd ~/sources/end-4
 git clone https://github.com/end-4/dots-hyprland.git
 cd dots-hyprland
+git checkout 4fdb76242885a497fbab523d41c9535116470d9e
 if [ $GCCVER -lt 13 ]; then
         CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ yay -S hyprlang --needed --noconfirm
 	CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ ./install.sh
