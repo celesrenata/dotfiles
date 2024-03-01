@@ -205,8 +205,8 @@ apply_ags() {
 }
 
 apply_wofi() {
-    # Check if scripts/templates/hypr/wofi/style.css exists
-    if [ ! -f "scripts/templates/hypr/wofi/style.css" ]; then
+    # Check if scripts/templates/wofi/style.css exists
+    if [ ! -f "scripts/templates/wofi/style.css" ]; then
         echo "Template file not found for Wofi colors. Skipping that."
         return
     fi
