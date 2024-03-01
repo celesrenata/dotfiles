@@ -46,6 +46,17 @@ transparentize() {
   printf 'rgba(%d, %d, %d, %.2f)\n' "$red" "$green" "$blue" "$alpha"
 }
 
+dehex() {
+  local hex="$1"
+  local red green blue
+
+  red=$((16#${hex:1:2}))
+  green=$((16#${hex:3:2}))
+  blue=$((16#${hex:5:2}))
+
+  printf '%d, %d, %d' "$red" "$green" "$blue"
+}
+
 get_light_dark() {
     lightdark=""
     if [ ! -f "$HOME"/.cache/ags/user/colormode.txt ]; then
