@@ -1,0 +1,11 @@
+--- /home/celes/.config/hypr/hyprland/general.conf	2024-03-02 15:24:33.130122100 -0800
++++ /home/celes/.config/hypr/custom/general.conf	2024-03-02 15:29:15.213462981 -0800
+@@ -32,7 +32,7 @@
+ gestures {
+     workspace_swipe = true
+     workspace_swipe_distance = 700
+-    workspace_swipe_fingers = 4
++    workspace_swipe_fingers = 3 
+     workspace_swipe_cancel_ratio = 0.2
+     workspace_swipe_min_speed_to_force = 5
+     workspace_swipe_direction_lock = true
