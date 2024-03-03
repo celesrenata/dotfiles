@@ -3,6 +3,7 @@
 OPWD=$(pwd)
 if [ "$1" == "--toshy" ]; then
 	cd ~/sources
+        rm -rf toshy
 	git clone https://github.com/RedBearAK/toshy.git
 
 	cd toshy
