@@ -21,6 +21,7 @@ if ! [ -f "/opt/gcc13/bin/gcc" ]; then
 	fi
 fi
 rm -rf ~/sources/end-4
+rm -rf ~/.config/hypr
 mkdir -p ~/sources/{end-4,celes}
 cd ~/sources/end-4
 git clone https://github.com/end-4/dots-hyprland.git
