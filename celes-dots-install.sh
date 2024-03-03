@@ -19,6 +19,7 @@ if ! [ -f "/opt/gcc13/bin/gcc" ]; then
 		./build-gcc13.sh
 	fi
 fi
+rm -rf ~/sources/end-4
 mkdir -p ~/sources/{end-4,celes}
 cd ~/sources/end-4
 git clone https://github.com/end-4/dots-hyprland.git
