@@ -38,7 +38,7 @@ else
 	./update-ags.sh
 fi
 cd ~/
-yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync cairo-dock-plug-ins-wayland-git network-manager-applet touche blueman wofi-calc
+yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync cairo-dock-plug-ins-wayland-git network-manager-applet touche blueman wofi-calc wtype
 rm -rf ~/.config/cairo-dock/current_theme/plug-ins/switcher/
 rsync -aHx ${OPWD}/.config ~/
 touch ~/.config/hypr/custom/env.conf
