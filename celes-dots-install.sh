@@ -26,7 +26,7 @@ mkdir -p ~/sources/{end-4,celes}
 cd ~/sources/end-4
 git clone https://github.com/end-4/dots-hyprland.git
 cd dots-hyprland
-git checkout a6a8c8dc6a1774dd44cb88c93d9abfb2a3e7947b
+git checkout 95b2e11254c209c64a480ad81965b72a4ea5d417 
 if [ $GCCVER -lt 13 ]; then
         CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ yay -S hyprlang --needed --noconfirm
 	CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ ./install.sh
@@ -52,6 +52,7 @@ if [ $? -ne 0 ]; then
 fi
 patch ~/.config/hypr/custom/general.conf ${OPWD}/general.conf.patch
 patch ~/.config/hypr/hyprland.conf ${OPWD}/hyprland.conf.patch
+patch ~/.config/ags/modules/onscreenkeyboard/data_keyboardlayouts.js ${OPWD}/data_keyboardlayouts.js.patch
 
 echo ""
 echo "you will want to reboot now and rerun this command with the --toshy switch from within Hyprland."
