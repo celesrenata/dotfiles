@@ -53,6 +53,7 @@ fi
 patch ~/.config/hypr/custom/general.conf ${OPWD}/general.conf.patch
 patch ~/.config/hypr/hyprland.conf ${OPWD}/hyprland.conf.patch
 patch ~/.config/ags/modules/onscreenkeyboard/data_keyboardlayouts.js ${OPWD}/data_keyboardlayouts.js.patch
+patch ~/.config/foot/foot.ini ${OPWD}/foot.ini.patch
 
 echo ""
 echo "you will want to reboot now and rerun this command with the --toshy switch from within Hyprland."
