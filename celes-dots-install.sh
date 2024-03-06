@@ -26,7 +26,7 @@ mkdir -p ~/sources/{end-4,celes}
 cd ~/sources/end-4
 git clone https://github.com/end-4/dots-hyprland.git
 cd dots-hyprland
-git checkout 95b2e11254c209c64a480ad81965b72a4ea5d417 
+git checkout 5d28f309a5870efcc42edd699e7bf9d6db3933f4 
 if [ $GCCVER -lt 13 ]; then
         CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ yay -S hyprlang --needed --noconfirm
 	CC=/opt/gcc13/bin/gcc CXX=/opt/gcc13/bin/g++ ./install.sh
@@ -38,7 +38,7 @@ else
 	./update-ags.sh
 fi
 cd ~/
-yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync cairo-dock-plug-ins-wayland-git network-manager-applet touche blueman wofi-calc wtype
+yay -S --needed --noconfirm touchegg-git gnome-pie-git wofi rsync network-manager-applet touche blueman wofi-calc wtype
 rm -rf ~/.config/cairo-dock/current_theme/plug-ins/switcher/
 rsync -aHx ${OPWD}/.config ~/
 touch ~/.config/hypr/custom/env.conf
@@ -52,8 +52,11 @@ if [ $? -ne 0 ]; then
 fi
 patch ~/.config/hypr/custom/general.conf ${OPWD}/general.conf.patch
 patch ~/.config/hypr/hyprland.conf ${OPWD}/hyprland.conf.patch
-patch ~/.config/ags/modules/onscreenkeyboard/data_keyboardlayouts.js ${OPWD}/data_keyboardlayouts.js.patch
-patch ~/.config/foot/foot.ini ${OPWD}/foot.ini.patch
+patch -t ~/.config/ags/modules/onscreenkeyboard/data_keyboardlayouts.js ${OPWD}/data_keyboardlayouts.js.patch
+patch -t ~/.config/foot/foot.ini ${OPWD}/foot.ini.patch
+if [ "$(uname -m)" != "aarch64" ]; then
+	patch ~/.config/gnome-pie/pies.conf ${OPWD}/pies.conf.patch
+fi
 
 echo ""
 echo "you will want to reboot now and rerun this command with the --toshy switch from within Hyprland."
