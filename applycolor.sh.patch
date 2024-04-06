@@ -8,9 +8,9 @@
 +  local hex="$1"
 +  local red green blue
 +
-+  red=$((16#${hex:1:2}))
-+  green=$((16#${hex:3:2}))
-+  blue=$((16#${hex:5:2}))
++  red=$((${hex:1:2}))
++  green=$((${hex:3:2}))
++  blue=$((${hex:5:2}))
 +
 +  printf '%d, %d, %d' "$red" "$green" "$blue"
 +}
