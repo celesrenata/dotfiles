@@ -1,0 +1,14 @@
+--- /home/celes/sources/end-4/dots-hyprland/.config/hypr/hyprland.conf	2024-03-02 15:48:39.236679372 -0800
++++ /.config/hypr/hyprland.conf	2024-03-02 15:53:20.403353562 -0800
+@@ -3,11 +3,8 @@
+ 
+ # Defaults
+ source=~/.config/hypr/hyprland/env.conf
+-source=~/.config/hypr/hyprland/execs.conf
+ source=~/.config/hypr/hyprland/general.conf
+ source=~/.config/hypr/hyprland/rules.conf
+ source=~/.config/hypr/hyprland/colors.conf
+-source=~/.config/hypr/hyprland/keybinds.conf
+ 
+ # Custom 
+ source=~/.config/hypr/custom/env.conf
