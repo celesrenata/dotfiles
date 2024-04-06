@@ -18,7 +18,15 @@
  get_light_dark() {
      lightdark=""
      if [ ! -f "$HOME"/.cache/ags/user/colormode.txt ]; then
-@@ -57,6 +68,23 @@ apply_fuzzel() {
+@@ -49,6 +60,7 @@ apply_fuzzel() {
+     # Copy template
+     mkdir -p "$HOME"/.cache/ags/user/generated/fuzzel
+     cp "scripts/templates/fuzzel/fuzzel.ini" "$HOME"/.cache/ags/user/generated/fuzzel/fuzzel.ini
++    chmod +w "$HOME"/.cache/ags/user/generated/fuzzel/fuzzel.ini
+     # Apply colors
+     for i in "${!colorlist[@]}"; do
+         sed -i "s/{{ ${colorlist[$i]} }}/${colorvalues[$i]#\#}/g" "$HOME"/.cache/ags/user/generated/fuzzel/fuzzel.ini
+@@ -57,6 +69,24 @@ apply_fuzzel() {
      cp  "$HOME"/.cache/ags/user/generated/fuzzel/fuzzel.ini "$HOME"/.config/fuzzel/fuzzel.ini
  }
  
@@ -30,6 +38,7 @@
 +    # Copy template
 +    mkdir -p "$HOME"/.cache/ags/user/generated/foot
 +    cp "scripts/templates/foot/foot.ini" "$HOME"/.cache/ags/user/generated/foot/foot.ini
++    chmod +w "$HOME"/.cache/ags/user/generated/foot/foot.ini
 +    # Apply colors
 +    for i in "${!colorlist[@]}"; do
 +        # sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME"/.cache/ags/user/generated/foot/foot.ini
@@ -42,7 +51,39 @@
  apply_term() {
      # Check if terminal escape sequence template exists
      if [ ! -f "scripts/templates/terminal/sequences.txt" ]; then
-@@ -148,6 +176,27 @@ apply_ags() {
+@@ -66,6 +96,7 @@ apply_term() {
+     # Copy template
+     mkdir -p "$HOME"/.cache/ags/user/generated/terminal
+     cp "scripts/templates/terminal/sequences.txt" "$HOME"/.cache/ags/user/generated/terminal/sequences.txt
++    chmod +w "$HOME"/.cache/ags/user/generated/terminal/sequences.txt
+     # Apply colors
+     for i in "${!colorlist[@]}"; do
+         sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME"/.cache/ags/user/generated/terminal/sequences.txt
+@@ -89,6 +120,7 @@ apply_hyprland() {
+     # Copy template
+     mkdir -p "$HOME"/.cache/ags/user/generated/hypr/hyprland
+     cp "scripts/templates/hypr/hyprland/colors.conf" "$HOME"/.cache/ags/user/generated/hypr/hyprland/colors.conf
++    chmod +w "$HOME"/.cache/ags/user/generated/hypr/hyprland/colors.conf
+     # Apply colors
+     for i in "${!colorlist[@]}"; do
+         sed -i "s/{{ ${colorlist[$i]} }}/${colorvalues[$i]#\#}/g" "$HOME"/.cache/ags/user/generated/hypr/hyprland/colors.conf
+@@ -106,6 +138,7 @@ apply_hyprlock() {
+     # Copy template
+     mkdir -p "$HOME"/.cache/ags/user/generated/hypr/
+     cp "scripts/templates/hypr/hyprlock.conf" "$HOME"/.cache/ags/user/generated/hypr/hyprlock.conf
++    chmod +w "$HOME"/.cache/ags/user/generated/hypr/hyprlock.conf
+     # Apply colors
+     # sed -i "s/{{ SWWW_WALL }}/${wallpath_png}/g" "$HOME"/.cache/ags/user/generated/hypr/hyprlock.conf
+     for i in "${!colorlist[@]}"; do
+@@ -121,6 +154,7 @@ apply_gtk() { # Using gradience-cli
+     # Copy template
+     mkdir -p "$HOME"/.cache/ags/user/generated/gradience
+     cp "scripts/templates/gradience/preset.json" "$HOME"/.cache/ags/user/generated/gradience/preset.json
++    chmod +w  "$HOME"/.cache/ags/user/generated/gradience/preset.json
+ 
+     # Apply colors
+     for i in "${!colorlist[@]}"; do
+@@ -148,6 +182,28 @@ apply_ags() {
      ags run-js "App.resetCss(); App.applyCss('${HOME}/.cache/ags/user/generated/style.css');"
  }
  
@@ -54,6 +95,7 @@
 +    fi
 +    # Copy template
 +    cp "scripts/templates/wofi/style.css" "$HOME/.config/wofi/style_new.css"
++    chmod +w "$HOME/.config/wofi/style_new.css"
 +    # Apply colors
 +    for i in "${!colorlist[@]}"; do
 +        sed -i "s/{{ ${colorlist[$i]} }}/${colorvalues[$i]#\#}/g" "$HOME/.config/wofi/style_new.css"
@@ -70,7 +112,7 @@
  if [[ "$1" = "--bad-apple" ]]; then
      lightdark=$(get_light_dark)
      cp scripts/color_generation/specials/_material_badapple"${lightdark}".scss scss/_material.scss
-@@ -170,3 +219,5 @@ apply_hyprlock &
+@@ -170,3 +226,5 @@ apply_hyprlock &
  apply_gtk &
  apply_fuzzel &
  apply_term &
