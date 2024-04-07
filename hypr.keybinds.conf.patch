@@ -1,3 +1,5 @@
+diff --git a/.config/hypr/custom/keybinds.conf b/.config/hypr/custom/keybinds.conf
+index f34545c..49739e8 100644
 --- a/.config/hypr/custom/keybinds.conf
 +++ b/.config/hypr/custom/keybinds.conf
 @@ -1,2 +1,228 @@
@@ -107,7 +109,7 @@
 +bind = $Primary$Secondary, Slash, exec, pkill anyrun || anyrun
 +
 +###################################### AGS keybinds #####################################
-+bindr = $Primary$Secondary, R, exec, hyprctl reload; killall ags activewin.sh activews.sh gohypr bash ydotool; ags &
++bindr = $Primary$Secondary, R, exec, hyprctl reload; pkill ags activewin.sh activews.sh gohypr bash ydotool; ags &
 +bind = $Primary$Secondary, T, exec, ~/.config/ags/scripts/color_generation/switchwall.sh
 +bind = $Alternate, Tab, exec, ags -t 'overview'
 +bind = $Primary$Secondary, Space, exec, ags -t 'overview'
