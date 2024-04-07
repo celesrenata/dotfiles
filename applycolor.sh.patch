@@ -1,18 +1,17 @@
 diff --git a/.config/ags/scripts/color_generation/applycolor.sh b/.config/ags/scripts/color_generation/applycolor.sh
-index e41d7c6..b4dd737 100755
+index e41d7c6..259eb32 100755
 --- a/.config/ags/scripts/color_generation/applycolor.sh
 +++ b/.config/ags/scripts/color_generation/applycolor.sh
-@@ -23,13 +23,24 @@ transparentize() {
+@@ -22,7 +22,7 @@ transparentize() {
+   local hex="$1"
    local alpha="$2"
    local red green blue
- 
--  red=$((16#${hex:1:2}))
--  green=$((16#${hex:3:2}))
--  blue=$((16#${hex:5:2}))
-+  red=0x${hex:1:2}
-+  green=0x${hex:3:2}
-+  blue=0x${hex:5:2}
- 
+-
++  
+   red=$((16#${hex:1:2}))
+   green=$((16#${hex:3:2}))
+   blue=$((16#${hex:5:2}))
+@@ -30,6 +30,17 @@ transparentize() {
    printf 'rgba(%d, %d, %d, %.2f)\n' "$red" "$green" "$blue" "$alpha"
  }
  
@@ -20,9 +19,9 @@ index e41d7c6..b4dd737 100755
 +  local hex="$1"
 +  local red green blue
 +
-+  red=0x${hex:1:2}
-+  green=0x${hex:3:2}
-+  blue=0x${hex:5:2}
++  red=$((16#${hex:1:2}))
++  green=$((16#${hex:3:2}))
++  blue=$((16#${hex:5:2}))
 +
 +  printf '%d, %d, %d' "$red" "$green" "$blue"
 +}
