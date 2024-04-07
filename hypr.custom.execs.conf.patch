@@ -52,6 +52,3 @@
 +
 +# Remote VNC
 +exec-once=wayvnc
-+
-+# Initial Script
-+exec-once= ~/.local/bin/initialSetup.sh
