@@ -9,7 +9,7 @@ index e41d7c6..b4dd737 100755
 -  red=$((16#${hex:1:2}))
 -  green=$((16#${hex:3:2}))
 -  blue=$((16#${hex:5:2}))
-+  red=0x${hex:0:2}
++  red=0x${hex:1:2}
 +  green=0x${hex:3:2}
 +  blue=0x${hex:5:2}
  
