@@ -5,7 +5,7 @@
  end
  
 -alias pamcan=pacman
-+set COLORTERM xterm-256color
++set -g fish_term24bit 1
  
  # function fish_prompt
  #   set_color cyan; echo (pwd)
