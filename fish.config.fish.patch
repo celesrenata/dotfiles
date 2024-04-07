@@ -1,0 +1,11 @@
+--- a/.config/fish/config.fish
++++ b/.config/fish/config.fish
+@@ -17,7 +17,7 @@ if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
+     cat ~/.cache/ags/user/generated/terminal/sequences.txt
+ end
+ 
+-alias pamcan=pacman
++set COLORTERM xterm-256color
+ 
+ # function fish_prompt
+ #   set_color cyan; echo (pwd)
