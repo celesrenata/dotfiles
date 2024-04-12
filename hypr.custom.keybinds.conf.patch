@@ -1,5 +1,3 @@
-diff --git a/.config/hypr/custom/keybinds.conf b/.config/hypr/custom/keybinds.conf
-index f34545c..49739e8 100644
 --- a/.config/hypr/custom/keybinds.conf
 +++ b/.config/hypr/custom/keybinds.conf
 @@ -1,2 +1,228 @@
@@ -14,7 +12,7 @@ index f34545c..49739e8 100644
 +$Alternate="Alt"
 +$MenuButton="Menu"
 +
-+#################### It just works™ keybinds ###################
++# ################### It just works™ keybinds ###################
 +# Volume
 +bindl = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
 +bindle=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
@@ -26,7 +24,7 @@ index f34545c..49739e8 100644
 +bindle=, XF86MonBrightnessUp, exec, ags run-js 'brightness.screen_value += 0.05;'
 +bindle=, XF86MonBrightnessDown, exec, ags run-js 'brightness.screen_value -= 0.05;'
 +
-+######################################## Applications ########################################
++# ####################################### Applications ########################################
 +# Apps: just normal apps
 +# Code
 +bind = $Primary$Secondary, U, exec, code
@@ -66,8 +64,8 @@ index f34545c..49739e8 100644
 +bind = $Secondary$Alternate, Q, exec, hyprctl kill
 +bind = $Primary$Tertiary$Alternate, Delete, exec, pkill wlogout || wlogout -p layer-shell
 +bind = $Primary$Tertiary$Alternate$Secondary, Delete, exec, systemctl poweroff
-+#bind = $Tertiary$Alternate,mouse_up, exec, wtype -M ctrl -k Prior
-+#bind = $Tertiary$Alternate,mouse_down, exec, wtype -M ctrl -k Next
++# bind = $Tertiary$Alternate,mouse_up, exec, wtype -M ctrl -k Prior
++# bind = $Tertiary$Alternate,mouse_down, exec, wtype -M ctrl -k Next
 +
 +# Screenshot, Record, OCR, Color picker, Clipboard history
 +bind = $Secondary$Tertiary, D, exec,~/.local/bin/rubyshot | wl-copy
@@ -108,8 +106,8 @@ index f34545c..49739e8 100644
 +# App launcher
 +bind = $Primary$Secondary, Slash, exec, pkill anyrun || anyrun
 +
-+###################################### AGS keybinds #####################################
-+bindr = $Primary$Secondary, R, exec, hyprctl reload; pkill ags; pkill activewin.sh; pkill activews.sh; pkill gohypr; pkill bash; pkill ydotool; ags &
++# ##################################### AGS keybinds #####################################
++bindr = $Primary$Secondary, R, exec, hyprctl reload; pkill ags activewin.sh activews.sh gohypr bash ydotool; ags &
 +bind = $Primary$Secondary, T, exec, ~/.config/ags/scripts/color_generation/switchwall.sh
 +bind = $Alternate, Tab, exec, ags -t 'overview'
 +bind = $Primary$Secondary, Space, exec, ags -t 'overview'
@@ -133,16 +131,16 @@ index f34545c..49739e8 100644
 +bindr = $Primary, $Primary_R, exec, ags run-js 'openMusic$Primarys.value = false'
 +bindr = $Primary, $Primary_R, exec, ags run-js 'openColorScheme.value = false'
 +
-+###################################### Plugins #########################################
++# ##################################### Plugins #########################################
 +bind = $Primary$Secondary, P, exec, hyprctl plugin load "~/.config/hypr/plugins/droidbars.so"
 +bind = $Primary$Secondary, O, exec, hyprctl plugin unload "~/.config/hypr/plugins/droidbars.so"
 +
-+## Testing
++# Testing
 +# bind = $Secondary$Alternate, f12, exec, notify-send "Hyprland version: $(hyprctl version | head -2 | tail -1 | cut -f2 -d ' ')" "owo" -a 'Hyprland keybind'
 +bind = $Secondary$Alternate, f12, exec, notify-send "Millis since epoch" "$(date +%s%N | cut -b1-13)" -a 'Hyprland keybind'
 +bind = $Secondary$Alternate, Equal, exec, notify-send "Urgent notification" "Ah hell no" -u critical -a 'Hyprland keybind'
 +
-+############################ Keybinds for Hyprland ############################
++# ########################### Keybinds for Hyprland ############################
 +# Swap windows
 +bind = $Secondary$Tertiary, left, movewindow, l
 +bind = $Secondary$Tertiary, right, movewindow, r
