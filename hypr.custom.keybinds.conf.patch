@@ -111,7 +111,7 @@
 +bind = $Primary$Secondary, T, exec, ~/.config/ags/scripts/color_generation/switchwall.sh
 +bind = $Alternate, Tab, exec, ags -t 'overview'
 +bind = $Primary$Secondary, Space, exec, ags -t 'overview'
-+bind = $Secondary$Alternate, Slash, exec, ags -t 'cheatsheet'
++bind = $Secondary$Alternate, Slash, exec, ags -t 'cheatsheet0'
 +bind = $Secondary, B, exec, ags -t 'sideleft'
 +bind = $Secondary, N, exec, ags -t 'sideright'
 +bind = $Secondary, M, exec, ags run-js 'openMusic$Primarys.value = (!Mpris.getPlayer() ? false : !openMusic$Primarys.value);'
