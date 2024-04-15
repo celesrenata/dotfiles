@@ -1,5 +1,3 @@
-diff --git a/.config/ags/modules/cheatsheet/main.js b/.config/ags/modules/cheatsheet/main.js
-index 9e0189a..6269069 100644
 --- a/.config/ags/modules/cheatsheet/main.js
 +++ b/.config/ags/modules/cheatsheet/main.js
 @@ -24,7 +24,12 @@ const CheatsheetHeader = () => Widget.CenterBox({
