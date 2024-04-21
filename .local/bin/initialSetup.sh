@@ -3,8 +3,8 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   mkdir -p ~/.local/share
   mkdir -p ~/.config/foot
   mkdir -p ~/.config/fuzzel
-  read -p "Enter Scale (#.#): " SCALE
-  echo "monitor=,preferred,auto,${SCALE}" > ~/.config/hypr/custom/custom.conf
+  #read -p "Enter Scale (#.#): " SCALE
+  echo "monitor=,preferred,auto,1" > ~/.config/hypr/custom/custom.conf
   ~/.config/ags/scripts/color_generation/switchwall.sh
   if [ $? -eq 0 ]; then
     touch ~/.local/share/initialSetup
