@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Sunshine
+Exec="~"/.local/bin/sunshine %U
+Terminal=false
+Type=Application
+Icon=sunshine
+StartupWMClass=Cider
+X-AppImage-Version=1.6.2.20230701.1
+Comment=A new cross-platform Apple Music experience based on Electron and Vue.js written from scratch with performance in mind.
+MimeType=x-scheme-handler/ame;x-scheme-handler/cider;x-scheme-handler/itms;x-scheme-handler/itmss;x-scheme-handler/musics;x-scheme-handler/music;
+Categories=AudioVideo;1
