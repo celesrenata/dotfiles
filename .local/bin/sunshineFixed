@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-$(nix build -I nixpkgs=flake:github:NixOS/nixpkgs/master -f '<nixpkgs>' --arg config '{ cudaSupport = true; cudaCapabilities = [ "12.2" ]; cudaEnableForwardCompat = false; allowUnfree = true; }' -L sunshine --print-out-paths 2> /dev/null | tail -n 1)/bin/sunshine
+$(nix build -I nixpkgs=flake:github:NixOS/nixpkgs/master -f '<nixpkgs>' --arg config '{ cudaSupport = true; cudaCapabilities = [ "12.2" ]; cudaEnableForwardCompat = false; allowUnfree = true; }' -L sunshine --print-out-paths 2> /dev/null )/bin/sunshine $@
