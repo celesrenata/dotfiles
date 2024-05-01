@@ -1,11 +1,10 @@
 [Desktop Entry]
-Name=Sunshine
-Exec="~"/.local/bin/sunshine %U
-Terminal=false
 Type=Application
+Name=Sunshine
+Exec="~"/.local/bin/sunshine
+Version=1.0
+Comment=Self-hosted game stream host for Moonlight
 Icon=sunshine
-StartupWMClass=Cider
-X-AppImage-Version=1.6.2.20230701.1
-Comment=A new cross-platform Apple Music experience based on Electron and Vue.js written from scratch with performance in mind.
-MimeType=x-scheme-handler/ame;x-scheme-handler/cider;x-scheme-handler/itms;x-scheme-handler/itmss;x-scheme-handler/musics;x-scheme-handler/music;
-Categories=AudioVideo;1
+Keywords=gamestream;stream;moonlight;remote play;
+Categories=AudioVideo;Network;RemoteAccess;
+Actions=RunInTerminal;
