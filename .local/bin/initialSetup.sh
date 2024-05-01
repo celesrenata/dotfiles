@@ -15,5 +15,6 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   ~/.config/ags/scripts/color_generation/colorgen.sh "${imgpath}" --apply --smart
   if [ $? -eq 0 ]; then
     touch ~/.local/share/initialSetup
+    reboot
   fi
 fi
