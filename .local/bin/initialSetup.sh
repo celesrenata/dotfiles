@@ -4,7 +4,7 @@ cursorposx=$(hyprctl cursorpos -j | gojq '.x' 2>/dev/null) || cursorposx=960
 cursorposy=$(hyprctl cursorpos -j | gojq '.y' 2>/dev/null) || cursorposy=540
 cursorposy_inverted=$(( screensizey - cursorposy ))
 if ! [ -f ~/.local/share/initialSetup ]; then
-  rsync -azL --no-perms .configstaging/ .config 2> /dev/null
+  rsync -azL --no-perms ~/.configstaging/ ~/.config 2> /dev/null
   mkdir -p ~/.local/share
   mkdir -p ~/.config/foot
   mkdir -p ~/.config/fuzzel
