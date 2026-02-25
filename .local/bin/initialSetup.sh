@@ -11,13 +11,18 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   mkdir -p ~/.local/state/quickshell/user/generated/{foot,terminal,fuzzel,wallpaper}
   mkdir -p ~/Videos
   
+  # Remove old matugen symlink if it exists
+  if [ -L ~/.config/matugen ]; then
+    rm ~/.config/matugen
+  fi
+  
   # Set proper permissions before rsync
   chmod -R u+w ~/.config/ ~/.local/state/quickshell/ 2>/dev/null || true
   
   # Now rsync staging configs
   rsync -azL --no-perms ~/.configstaging/ ~/.config 2> /dev/null
   
-  # Set permissions again after rsync (matugen managed by home-manager)
+  # Set permissions again after rsync
   chmod -R u+w ~/.local/state/quickshell/user/generated/ ~/.config/fuzzel/ ~/.config/foot/ ~/.config/gtk-4.0/ ~/.config/hypr/hyprland/ ~/.config/matugen/ 2>/dev/null || true
   
   # Preserve existing custom.conf or create default
