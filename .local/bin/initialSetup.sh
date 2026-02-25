@@ -6,13 +6,14 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   mkdir -p ~/.local/share
   mkdir -p ~/.config/foot
   mkdir -p ~/.config/fuzzel
+  mkdir -p ~/.config/gtk-4.0
   mkdir -p ~/.config/hypr/custom/scripts
   mkdir -p ~/.config/matugen/templates/kde
-  mkdir -p ~/.local/state/quickshell/user/generated/{foot,terminal,fuzzel}
+  mkdir -p ~/.local/state/quickshell/user/generated/{foot,terminal,fuzzel,wallpaper}
   mkdir -p ~/Videos
   
   # Set proper permissions for generated config files
-  chmod -R u+w ~/.local/state/quickshell/user/generated/ ~/.config/fuzzel/ ~/.config/foot/ ~/.config/matugen/ 2>/dev/null || true
+  chmod -R u+w ~/.local/state/quickshell/user/generated/ ~/.config/fuzzel/ ~/.config/foot/ ~/.config/matugen/ ~/.config/gtk-4.0/ ~/.config/hypr/hyprland/ 2>/dev/null || true
   
   # Preserve existing custom.conf or create default
   if [ ! -f ~/.config/hypr/custom.conf ]; then
