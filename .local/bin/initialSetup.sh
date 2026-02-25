@@ -2,7 +2,7 @@
 imgpath=~/Backgrounds/love-is-love.jpg
 
 if ! [ -f ~/.local/share/initialSetup ]; then
-  rsync -azL --no-perms ~/.configstaging/ ~/.config 2> /dev/null
+  # Create directories first
   mkdir -p ~/.local/share
   mkdir -p ~/.config/foot
   mkdir -p ~/.config/fuzzel
@@ -12,7 +12,13 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   mkdir -p ~/.local/state/quickshell/user/generated/{foot,terminal,fuzzel,wallpaper}
   mkdir -p ~/Videos
   
-  # Set proper permissions for generated config files
+  # Set proper permissions before rsync
+  chmod -R u+w ~/.config/ ~/.local/state/quickshell/ 2>/dev/null || true
+  
+  # Now rsync staging configs
+  rsync -azL --no-perms ~/.configstaging/ ~/.config 2> /dev/null
+  
+  # Set permissions again after rsync
   chmod -R u+w ~/.local/state/quickshell/user/generated/ ~/.config/fuzzel/ ~/.config/foot/ ~/.config/matugen/ ~/.config/gtk-4.0/ ~/.config/hypr/hyprland/ 2>/dev/null || true
   
   # Preserve existing custom.conf or create default
