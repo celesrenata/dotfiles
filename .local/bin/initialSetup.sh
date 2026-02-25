@@ -8,7 +8,6 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   mkdir -p ~/.config/fuzzel
   mkdir -p ~/.config/gtk-4.0
   mkdir -p ~/.config/hypr/custom/scripts
-  mkdir -p ~/.config/matugen/templates/kde
   mkdir -p ~/.local/state/quickshell/user/generated/{foot,terminal,fuzzel,wallpaper}
   mkdir -p ~/Videos
   
@@ -18,8 +17,8 @@ if ! [ -f ~/.local/share/initialSetup ]; then
   # Now rsync staging configs
   rsync -azL --no-perms ~/.configstaging/ ~/.config 2> /dev/null
   
-  # Set permissions again after rsync
-  chmod -R u+w ~/.local/state/quickshell/user/generated/ ~/.config/fuzzel/ ~/.config/foot/ ~/.config/matugen/ ~/.config/gtk-4.0/ ~/.config/hypr/hyprland/ 2>/dev/null || true
+  # Set permissions again after rsync (matugen managed by home-manager)
+  chmod -R u+w ~/.local/state/quickshell/user/generated/ ~/.config/fuzzel/ ~/.config/foot/ ~/.config/gtk-4.0/ ~/.config/hypr/hyprland/ ~/.config/matugen/ 2>/dev/null || true
   
   # Preserve existing custom.conf or create default
   if [ ! -f ~/.config/hypr/custom.conf ]; then
