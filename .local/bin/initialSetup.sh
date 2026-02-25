@@ -13,16 +13,7 @@ if ! [ -f ~/.local/share/initialSetup ]; then
     echo "monitor=,preferred,auto,1" > ~/.config/hypr/custom.conf
   fi
   
-  cursorposx=$(hyprctl cursorpos -j 2>/dev/null | gojq '.x' 2>/dev/null) || cursorposx=960
-  cursorposy=$(hyprctl cursorpos -j 2>/dev/null | gojq '.y' 2>/dev/null) || cursorposy=540
-  screensizey=$(hyprctl monitors -j 2>/dev/null | gojq '.[0].height' 2>/dev/null) || screensizey=1080
-  cursorposy_inverted=$((screensizey - cursorposy))
-  
-  swww img "$imgpath" --transition-step 100 --transition-fps 60 \
-    --transition-type grow --transition-angle 30 --transition-duration 2 \
-    --transition-pos "$cursorposx, $cursorposy_inverted"
-  
-  # Use Quickshell colorgen instead of AGS
+  # Generate and apply color scheme using Quickshell's colorgen
   if [ -f ~/.config/quickshell/ii/scripts/colors/colorgen.sh ]; then
     ~/.config/quickshell/ii/scripts/colors/colorgen.sh "${imgpath}" --apply --smart
   fi
